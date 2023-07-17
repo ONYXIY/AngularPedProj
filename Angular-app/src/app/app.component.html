@@ -1,0 +1,11 @@
+<div>
+    login:<input type="text" [value]="Login" placeholder="Enter your Login">
+    <div>
+{{Login}}
+    </div>
+    Password:<input #Password>
+    <div>
+        {{Password.value}}
+            </div>
+    <button (click)="setMessage()">Сохранить</button>
+</div>
