@@ -1,11 +1,7 @@
-<div>
-    login:<input type="text" [value]="Login" placeholder="Enter your Login">
-    <div>
-{{Login}}
-    </div>
-    Password:<input #Password>
-    <div>
-        {{Password.value}}
-            </div>
-    <button (click)="setMessage()">Сохранить</button>
-</div>
+<div *ngFor="let item of bitcoinApiArray">
+    <p>{{ item.symbol }}</p>
+    <p>Last: {{ item.last }}</p>
+    <p>Buy: {{ item.buy }}</p>
+    <p>Sell: {{ item.sell }}</p>
+  </div>
+  
