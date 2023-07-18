@@ -1,29 +1,30 @@
+import { ICurrApiInterface } from './interface/interfaceForBtcApi';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-interface BitcoinData {
-  symbol: string;
-  last: number;
-  buy: number;
-  sell: number;
-
-}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'Angular-app';
-  bitcoinApiArray: BitcoinData[] = [];
-  
-  
+  currApi: ICurrApiInterface[] = [];
+  selectSymbol: string = 'USD';
+  filteredData: ICurrApiInterface[] = [];
+ 
+
 
   constructor(private http: HttpClient) {
-    this.http.get<BitcoinData>('https://blockchain.info/ticker').subscribe(res => {
-      this.bitcoinApiArray = Object.values(res);
-    });
+    this.http.get<ICurrApiInterface[]>('https://blockchain.info/ticker').subscribe((res) =>{
+    this.currApi = Object.values(res);
+    console.log(this.currApi);
+    this.filteredData = this.currApi;
+    this.selectCoinBySymbol(this.selectSymbol)
+    })
   }
-  
+  selectCoinBySymbol(symbol: string){
+    this.selectSymbol = symbol;
+    this.filteredData = this.currApi.filter(item => item.symbol === symbol);
+  }
 }
