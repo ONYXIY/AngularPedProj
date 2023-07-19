@@ -16,6 +16,9 @@ export class AppComponent implements OnInit{
   blockchainApi: string = 'https://blockchain.info/ticker';
   bybitApi: string = 'https://api-testnet.bybit.com/v5/market/tickers?category=inverse&symbol=BTCUSD';
   currApiByBit: IBybitInterfacePrice[] = [];
+  lastBitcoinPriceBybit!: number;
+  lastBitcoinPriceBlockchain!: number;
+  howMuchMorePrice: number = 0;
   
  
 
@@ -24,19 +27,22 @@ export class AppComponent implements OnInit{
     setInterval(() =>{
     this.http.get<ICurrApiInterface[]>(this.blockchainApi).subscribe((res) =>{
     this.currApiBlockchain = Object.values(res);
-    console.log(this.currApiBlockchain);
+    this.lastBitcoinPriceBlockchain = this.currApiBlockchain[27].last;
+    console.log('blockchain price: ' + this.lastBitcoinPriceBlockchain);
     this.filteredData = this.currApiBlockchain;
     this.selectCoinBySymbol(this.selectSymbol)
     })
-  },2000);
+  },5000);
   setInterval(() =>{
     this.http.get<IBybitInterfacePrice[]>(this.bybitApi).subscribe((res) =>{
     this.currApiByBit = Object.values(res);
-    const lastBybitPric = this.currApiByBit[2].list[0].lastPrice;
-    console.log(lastBybitPric);
+    this.lastBitcoinPriceBybit = parseInt(this.currApiByBit[2].list[0].lastPrice)
+    console.log('Bybit price: ' + this.lastBitcoinPriceBybit);
     
     })
-  },2000);
+  },5000);
+  setInterval(()=>{
+    this.howMuchMore(this.lastBitcoinPriceBybit, this.lastBitcoinPriceBlockchain)}, 2000)
   }
   ngOnInit(): void {
   }
@@ -44,4 +50,16 @@ export class AppComponent implements OnInit{
     this.selectSymbol = symbol;
     this.filteredData = this.currApiBlockchain.filter(item => item.symbol === symbol);
   }
-}
+  
+  howMuchMore(lastBitcoinPriceBybit: number, lastBitcoinPriceBlockchain: number){
+    if(lastBitcoinPriceBybit > lastBitcoinPriceBlockchain){
+      this.howMuchMorePrice = (lastBitcoinPriceBybit - lastBitcoinPriceBlockchain)
+       
+    }else if(lastBitcoinPriceBybit < lastBitcoinPriceBlockchain){
+      this.howMuchMorePrice = (lastBitcoinPriceBlockchain - lastBitcoinPriceBybit)
+      
+    }
+      return this.howMuchMorePrice
+    }
+  }
+

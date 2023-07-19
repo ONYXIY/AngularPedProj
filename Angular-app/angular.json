@@ -32,6 +32,7 @@
             "styles": [
               "src/styles.scss"
             ],
+            
             "scripts": []
           },
           "configurations": {
@@ -76,7 +77,9 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Angular-app:build"
+            "browserTarget": "Angular-app:build",
+            "proxyConfig": "proxy.conf.json"
+
           }
         },
         "test": {

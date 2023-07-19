@@ -1,0 +1,19 @@
+{
+    "/blockchain": {
+      "target": "https://blockchain.info",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/blockchain": ""
+      }
+    },
+    "/bybit": {
+      "target": "https://api-testnet.bybit.com",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/bybit": ""
+      }
+    }
+  }
+  
