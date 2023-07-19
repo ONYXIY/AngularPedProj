@@ -1,6 +1,7 @@
 export interface ICurrApiInterface{
     symbol: string,
-    last: number
+    last: number,
+    list: [],
     // buy: number,
     // sell: number
 }
