@@ -1,5 +1,5 @@
 <div class="name">
-<div class="lastPrice" [ngClass]="{'bg-green': lastBitcoinPriceBlockchain > lastBitcoinPriceBybit, 'bg-red': lastBitcoinPriceBlockchain <= lastBitcoinPriceBybit}">
+<div class="lastPrice" [ngClass]="{'bg-green': lastBitcoinPriceBybit > lastBitcoinPriceBlockchain, 'bg-red': lastBitcoinPriceBybit <= lastBitcoinPriceBlockchain}">
   <!-- <select [(ngModel)]="selectSymbol" (change)="selectCoinBySymbol(selectSymbol)">
     <option value="">All</option>
     <option *ngFor="let item of currApiBlockchain" [value]="item.symbol">{{ item.symbol }}</option>
@@ -9,11 +9,13 @@
   <div><p>Bitcoin Price from blockchain: {{ lastBitcoinPriceBlockchain }}</p></div>
 </div>
 </div>
-<div class="lastPrice" [ngClass]="{'bg-green': lastBitcoinPriceBybit > lastBitcoinPriceBlockchain, 'bg-red': lastBitcoinPriceBybit <= lastBitcoinPriceBlockchain}">
+<div class="lastPrice" [ngClass]="{'bg-green': lastBitcoinPriceBlockchain > lastBitcoinPriceBybit, 'bg-red': lastBitcoinPriceBlockchain <= lastBitcoinPriceBybit}">
   <div><p>Bitcoin Price from ByBit: {{lastBitcoinPriceBybit}}</p></div>
   
 </div>
-<div class="justify-center">
+<div class="priceDifference">
+  <p>
   Difference: {{howMuchMorePrice | number: '2.2-3'}}$
+</p>
 </div>
 </div>
