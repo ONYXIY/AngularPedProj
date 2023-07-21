@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ChartsComponent } from './components/charts/charts.component';
-
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +14,7 @@ import { ChartsComponent } from './components/charts/charts.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule, FormsModule
+    AppRoutingModule, HttpClientModule, FormsModule, NgChartsModule
   ],
   exports: [AppComponent],
   providers: [],
