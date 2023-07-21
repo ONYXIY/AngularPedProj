@@ -1,5 +1,11 @@
-<div>
-    <canvas class="#Chart bg-slate-800">
-        BTC/USD
+<div class="chart-wrapper">
+    <canvas baseChart 
+      [datasets]="lineChartData" 
+      [labels]="lineChartLabels" 
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend" 
+      [chartType]="lineChartType" 
+      [plugins]="lineChartPlugins">
     </canvas>
-</div>
+  </div>
+  

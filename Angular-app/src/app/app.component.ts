@@ -2,6 +2,7 @@ import { ICurrApiInterface } from './interface/interfaceForBtcApi';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IBybitInterfacePrice } from './interface/interfaceForBybitApi';
+import { CurPriceApiService } from './services/cur-price-api-service.service';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit{
     this.http.get<ICurrApiInterface[]>(this.blockchainApi).subscribe((res) =>{
     this.currApiBlockchain = Object.values(res);
     this.lastBitcoinPriceBlockchain = this.currApiBlockchain[27].last;
-    console.log('blockchain price: ' + this.lastBitcoinPriceBlockchain);
+    console.log('Blockchain price: ' + this.lastBitcoinPriceBlockchain);
     this.filteredData = this.currApiBlockchain;
     this.selectCoinBySymbol(this.selectSymbol)
     })
@@ -40,6 +41,8 @@ export class AppComponent implements OnInit{
     console.log('Bybit price: ' + this.lastBitcoinPriceBybit);
     
     })
+   
+
   },5000);
   setInterval(()=>{
     this.howMuchMore(this.lastBitcoinPriceBybit, this.lastBitcoinPriceBlockchain)}, 2000)
@@ -62,4 +65,3 @@ export class AppComponent implements OnInit{
       return this.howMuchMorePrice
     }
   }
-
