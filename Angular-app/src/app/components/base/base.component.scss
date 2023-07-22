@@ -1,0 +1,63 @@
+.name {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1fr;
+    justify-content: center;
+  
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr 1fr; 
+    }
+  
+    @media screen and (max-width: 480px) {
+      
+      grid-template-columns: 1fr; 
+    }
+  }
+  .priceDifference{
+    border: solid 1px rgba(31, 28, 28, 0.795);
+    border-radius: 2px;
+    text-align: center;
+    transition: opacity 1s ease, background-color 1s ease, border-radius 1s ease;
+    color: rgba(255, 255, 255, 0.692);
+    margin: auto 0;
+    &:hover {
+      background-color: azure;
+      transform: scale(1.05);
+      color: rgba(17, 16, 16, 0.76);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      border: solid 1px rgba(31, 28, 28, 0.795);
+      border-radius: 2px;
+    }
+  }
+  
+  .bg-green {
+    background-color: rgba(41, 161, 41, 0.705);
+  }
+  
+  .bg-red {
+    background-color: rgb(214, 79, 79);
+  }
+  
+  .lastPrice {
+    border: solid 1px rgba(31, 28, 28, 0.795);
+    border-radius: 2px;
+    transition: opacity 1s ease, background-color 1s ease, border-radius 1s ease;
+    color: rgba(255, 255, 255, 0.692);
+    margin: auto 0;
+    text-align: center;
+  
+    @media screen and (max-width: 768px) {
+     
+      font-size: 14px;
+    }
+  
+    &:hover {
+      background-color: azure;
+      transform: scale(1.05);
+      color: rgba(17, 16, 16, 0.76);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      border: solid 1px rgba(31, 28, 28, 0.795);
+      border-radius: 2px;
+    }
+  }
+  
