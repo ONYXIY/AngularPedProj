@@ -20,10 +20,6 @@ export class BaseComponent {
   private bybitApi$!: Observable<IBybitInterfacePrice[]>;
   private bchApi$!: Observable<ICurrApiInterface[]>;
 
-  private intervalSubscription: Subscription | undefined;
- 
-
-
   constructor(private http: HttpClient) {
   
   setInterval(()=>{

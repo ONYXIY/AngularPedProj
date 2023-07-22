@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { ChartDataset, ChartOptions, ChartType } from 'chart.js';
 
 @Component({
@@ -8,10 +8,18 @@ import { ChartDataset, ChartOptions, ChartType } from 'chart.js';
 })
 export class ChartsComponent {
 
+  @Input()lastBitcoinPriceBlockchain!: number;
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['lastBitcoinPriceBlockchain'] && !changes['lastBitcoinPriceBlockchain'].firstChange) {
+      this.PriceChart(this.lastBitcoinPriceBlockchain);
+      console.log('I CHANGE CHARTS ' + this.lastBitcoinPriceBlockchain)
+    }
+  }
 
   lineChartData: ChartDataset[] = [
     { 
-      data: [85, 72, 78, 75, 77, 75], 
+      data: [], 
       label: 'BTC/USD',
       backgroundColor: 'rgb(29, 45, 80);', 
       borderColor: 'yellow'
@@ -28,5 +36,12 @@ export class ChartsComponent {
   lineChartPlugins = [];
   lineChartType: ChartType = 'line';
 
+  
+  PriceChart(lastBitcoinPriceBlockchain: number) {
+    const newPrice = [...this.lineChartData[0].data, lastBitcoinPriceBlockchain];
+    this.lineChartData = [{ ...this.lineChartData[0], data: newPrice }];
 
+  }
+  
+  
 }
