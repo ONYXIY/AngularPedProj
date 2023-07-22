@@ -27,6 +27,7 @@
     border-radius: 5px;
     margin-right: 10px;
     transition: opacity 1s ease, background-color 0.5s ease, border-radius 1s ease;
+    cursor: pointer;
     
     &:hover{
         transform: scale(1.2);
