@@ -58,7 +58,7 @@ export class BaseComponent {
     this.BtcFee$.subscribe((res: IBTCFee) =>{
       this.BTCFeePriority = Object.values(res);
       this.BTCFeePriorityPrice = this.BTCFeePriority[2]
-      console.log('BTC fee rn ' + this.BTCFeePriorityPrice)
+      console.log('BTC fee rn: ' + this.BTCFeePriorityPrice)
     })
   
   }
@@ -73,10 +73,10 @@ export class BaseComponent {
     }
       return this.howMuchMorePrice
     }
-    AddBtcPrice(){
-      this.lastBitcoinPriceBlockchain = this.lastBitcoinPriceBlockchain + 1000 
-      console.log(this.lastBitcoinPriceBlockchain)
-      return this.lastBitcoinPriceBlockchain
+    // AddBtcPrice(){
+    //   this.lastBitcoinPriceBlockchain = this.lastBitcoinPriceBlockchain + 1000 
+    //   console.log(this.lastBitcoinPriceBlockchain)
+    //   return this.lastBitcoinPriceBlockchain
 
-    }
+    // }
 }
