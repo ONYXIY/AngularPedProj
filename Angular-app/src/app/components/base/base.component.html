@@ -16,9 +16,13 @@
     <div class="priceDifference">
       <p>
       Difference: {{howMuchMorePrice | number: '2.2-3'}}$
+       (Fee: {{BTCFeePriorityPrice}})
     </p>
     </div>
     </div>
     <div class="charts">
         <app-charts [lastBitcoinPriceBlockchain]="lastBitcoinPriceBlockchain"></app-charts>
+    </div>
+    <div>
+      <!-- <button>Add Price</button> -->
     </div>
