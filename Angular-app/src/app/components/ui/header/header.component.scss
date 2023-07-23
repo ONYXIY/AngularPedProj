@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    position: relative;
+    border: solid 1px rgb(61, 61, 61);
+    background-color: #3f3f3f;
+  }
+  
+  .logo {
+    width: 80px;
+    cursor: pointer;
+    
+  }
+  
+  .btn-container {
+    position: absolute;
+    right: 0;
+    display: flex;
+  }
+  
+  .btn {
+    background-color: rgb(87, 87, 228);
+    padding: 1px;
+    height: 50px;
+    width: 150px;
+    color: wheat;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: opacity 1s ease, background-color 0.5s ease, border-radius 1s ease;
+    cursor: pointer;
+    
+    &:hover{
+        transform: scale(1.2);
+        background-color: rgb(33, 33, 212);
+    }
+  }
+  

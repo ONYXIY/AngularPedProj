@@ -5,22 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ChartsComponent } from './components/charts/charts.component';
-import { NgChartsModule } from 'ng2-charts';
+
 import { HeaderComponent } from './components/ui/header/header.component';
 import { FooterComponent } from './components/ui/footer/footer.component';
-import { BaseComponent } from './components/base/base.component';
+import { ProfileComponent } from './components/profile/profile/profile.component';
+import { BaseModule } from './components/base/base.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    ChartsComponent,
+    
     HeaderComponent,
     FooterComponent,
-    BaseComponent
+    
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule, FormsModule, NgChartsModule
+    AppRoutingModule, HttpClientModule, FormsModule, BaseModule
   ],
   exports: [AppComponent],
   providers: [],
