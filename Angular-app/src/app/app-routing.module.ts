@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
 
 const routes: Routes = [
-  {path: '', component: AppComponent },
+  {path: '', loadChildren: () => import('./components/base/base.module').then(m =>m.BaseModule)},
   {path: 'profile', component: ProfileComponent},
   {path: '**', redirectTo: '', component: AppComponent}
 ];
