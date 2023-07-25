@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/ui/header/header.component';
 import { FooterComponent } from './components/ui/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
 import { BaseModule } from './components/base/base.module';
+import { LoginComponent } from './components/login/login/login.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BaseModule } from './components/base/base.module';
     HeaderComponent,
     FooterComponent,
     
-    ProfileComponent
+    ProfileComponent,
+         LoginComponent
   ],
   imports: [
     BrowserModule,
