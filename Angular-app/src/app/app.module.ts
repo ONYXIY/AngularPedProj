@@ -11,6 +11,7 @@ import { FooterComponent } from './components/ui/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile/profile.component';
 import { BaseModule } from './components/base/base.module';
 import { LoginComponent } from './components/login/login/login.component';
+import { SubscriptionComponent } from './components/subscription/subscription/subscription.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LoginComponent } from './components/login/login/login.component';
     FooterComponent,
     
     ProfileComponent,
-         LoginComponent
+         LoginComponent,
+         SubscriptionComponent
   ],
   imports: [
     BrowserModule,

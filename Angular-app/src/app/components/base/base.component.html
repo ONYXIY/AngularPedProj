@@ -6,17 +6,17 @@
       </select> -->
     
     <div>
-      <div><p>Bitcoin Price from blockchain: {{ lastBitcoinPriceBlockchain }}</p></div>
+      <div><p>Bitcoin Price from blockchain: <br>{{ lastBitcoinPriceBlockchain }}</p></div>
     </div>
     </div>
     <div class="lastPrice" [ngClass]="{'bg-green': lastBitcoinPriceBlockchain > lastBitcoinPriceBybit, 'bg-red': lastBitcoinPriceBlockchain <= lastBitcoinPriceBybit}">
-      <div><p>Bitcoin Price from ByBit: {{lastBitcoinPriceBybit}}</p></div>
+      <div><p>Bitcoin Price from ByBit:  <br>{{lastBitcoinPriceBybit}}</p></div>
       
     </div>
     <div class="priceDifference">
       <p>
       Difference: {{howMuchMorePrice | number: '2.2-3'}}$
-       (Fee: {{BTCFeePriorityPrice}})
+       <br>(Fee: {{BTCFeePriorityPrice}})
     </p>
     </div>
     </div>
