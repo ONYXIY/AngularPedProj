@@ -1,0 +1,34 @@
+{
+  "subscription": [
+      {
+          "id": 1,
+          "title": "Copper",
+          "price": 100,
+          "Details":{
+              "SubscriptionPeriod": 30,
+              "AvailableCurrencies": "BTC",
+              "AvailableExchanges": ["blockchain.com", "bybit.com"]
+          }
+      },
+      {
+          "id": 2,
+          "title": "Silver",
+          "price": 200,
+          "Details":{
+              "SubscriptionPeriod": 30,
+              "AvailableCurrencies": "BTC",
+              "AvailableExchanges": ["blockchain.com", "bybit.com"]
+          }
+      },
+      {
+          "id": 3,
+          "title": "Gold",
+          "price": 300,
+          "Details":{
+              "SubscriptionPeriod": 30,
+              "AvailableCurrencies": "BTC",
+              "AvailableExchanges": ["blockchain.com", "bybit.com"]
+          }
+      }
+  ]
+}

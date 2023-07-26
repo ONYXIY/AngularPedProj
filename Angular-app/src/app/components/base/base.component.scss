@@ -15,6 +15,7 @@
   }
   .priceDifference{
     border: solid 1px rgba(31, 28, 28, 0.795);
+    font-size:xx-large;
     border-radius: 2px;
     text-align: center;
     transition: opacity 1s ease, background-color 1s ease, border-radius 1s ease;
@@ -44,6 +45,7 @@
   }
   
   .lastPrice {
+    font-size:xx-large;
     border: solid 1px rgba(31, 28, 28, 0.795);
     border-radius: 2px;
     transition: opacity 1s ease, background-color 1s ease, border-radius 1s ease;

@@ -21,7 +21,7 @@ export class BaseComponent {
   lastBitcoinPriceBybit!: number;
   lastBitcoinPriceBlockchain!: number;
   howMuchMorePrice: number = 0;
-  PriorityBTCFee!: number;
+  // PriorityBTCFee!: number;
   private bybitApi$!: Observable<IBybitInterfacePrice[]>;
   private bchApi$!: Observable<ICurrApiInterface[]>;
   private BtcFee$!: Observable<IBTCFee>;

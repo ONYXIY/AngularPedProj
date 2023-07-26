@@ -1,30 +1,63 @@
 .ProfileBlock {
     margin: 0 auto;
-    background-color: rgb(87, 87, 228);
+    margin-top: 10px;
+    background-color: #3f3f3f;
     max-width: 750px;
+    height: 500px;
     text-align: left;
     text-shadow: #3f3f3f;
     padding: 20px;
-    border: solid #3f3f3f 2px;
+    border: solid black 1px;
     border-radius: 10px;
     position: relative; 
   
     p {
       text-transform: uppercase;
+      transition: opacity 1s ease, background-color 0.5s ease, border-radius 1s ease;
       display: inline-block;
-      color: wheat;
+      color: white;
       cursor: pointer;
+      margin: 10px;
+      &:hover{
+        color: wheat;
+        scale: (1.2);
+      }
     }
     
     .logout {
-      color: rgb(105, 24, 24);
-      border: solid 2px #3f3f3f;
+      color: rgb(238, 76, 76);
+      border: solid 2px rgb(87, 87, 228);
+      transition: opacity 1s ease, background-color 0.5s ease, border-radius 1s ease;
       padding: 10px;
+      margin-bottom: 15px;
       border-radius: 10px;
       text-shadow: #3f3f3f;
       position: absolute;
       bottom: 0;
       right: 10px;
+      &:hover{
+        background-color: rgb(238, 76, 76);
+        color: white;
+        scale: (1.2);
+      }
+    }
+  }
+  .ProfileHeader{
+    margin: 0 auto;
+    background-color: #3f3f3f;
+    max-width: 750px;
+    text-align: center;
+    text-shadow: #3f3f3f;
+    padding: 20px;
+    border: solid black 1px;
+    border-radius: 10px;
+    position: relative; 
+    p {
+      text-transform: uppercase;
+      scale: (1.4);
+      display: inline-block;
+      color: white;
+      cursor: pointer;
     }
   }
   

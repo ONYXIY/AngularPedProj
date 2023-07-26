@@ -1,0 +1,15 @@
+<div class="SubsHeader">
+    <p>Subscription</p>
+  </div>
+  <div class="container">
+    <div class="subsForm" *ngFor="let subscription of Subscriptions">
+      <p>{{ subscription.title }}</p>
+      <p>{{ subscription.price | currency }}</p>
+      <p></p>
+      <div class="btnContainer">
+        <button class="btn">Purchase</button>
+        <button class="btn">Details</button>
+      </div>
+    </div>
+  </div>
+  
