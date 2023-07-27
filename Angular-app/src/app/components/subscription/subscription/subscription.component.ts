@@ -11,6 +11,7 @@ import { SubscriptionService } from 'src/app/services/subscription.service';
 export class SubscriptionComponent implements OnInit{
   Subscriptions!: ISubscription[];
   SubscriptionOnSubs!: Subscription;
+  public needMoreDetails: boolean = true;
 
 constructor(private SubscriptionService: SubscriptionService){}
 
@@ -22,6 +23,10 @@ this.SubscriptionOnSubs = this.SubscriptionService.getSubscriptions().subscribe(
 }
 ngOnDestroy(): void {
   if (this.SubscriptionOnSubs) this.SubscriptionOnSubs.unsubscribe();
+}
+
+ShowHideDetails(){
+  this.needMoreDetails = !this.needMoreDetails
 }
 
 
