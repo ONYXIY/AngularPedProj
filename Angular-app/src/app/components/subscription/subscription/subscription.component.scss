@@ -73,3 +73,7 @@
         background-color: rgb(56, 56, 202);
     }
 }
+.templateDetails{
+  transition: opacity 1s ease, background-color 0.5s ease, border-radius 1s ease;
+  color: black;
+}

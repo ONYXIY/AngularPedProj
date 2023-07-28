@@ -9,16 +9,17 @@ import { SubscriptionService } from 'src/app/services/subscription.service';
   styleUrls: ['./subscription.component.scss']
 })
 export class SubscriptionComponent implements OnInit{
-  Subscriptions!: ISubscription[];
-  SubscriptionOnSubs!: Subscription;
+  public Subscriptions!: ISubscription[];
+  public SubscriptionOnSubs!: Subscription;
   public needMoreDetails: boolean = true;
 
 constructor(private SubscriptionService: SubscriptionService){}
 
 ngOnInit(): void{
 this.SubscriptionOnSubs = this.SubscriptionService.getSubscriptions().subscribe((data) => {
-  this.Subscriptions = data
-  console.log( this.Subscriptions)
+  this.Subscriptions = data;
+  console.log( this.Subscriptions);
+
 })
 }
 ngOnDestroy(): void {

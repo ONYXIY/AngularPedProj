@@ -5,16 +5,19 @@
     <div class="subsForm" *ngFor="let subscription of Subscriptions">
       <p>{{ subscription.title }}</p>
       <p>{{ subscription.price | currency }}</p>
-      
+      <ng-template  [ngIf]="needMoreDetails">
+        <p>Subscription Period: {{subscription.SubscriptionPeriod}} D</p>
+        <p>Available coin: {{subscription.AvailableCurrencies}}</p>
+        <p>Exchanges: {{subscription.AvailableExchanges}}</p>
+        
+      </ng-template>
       
       <div class="btnContainer">
         
         <button class="btn">Purchase</button>
         <button class="btn" (click)="ShowHideDetails()">Details</button>
       </div>
-      <ng-template>
-        <p [ngIf]="needMoreDetails">{{subscription.details}}</p>
-      </ng-template>
+      
     </div>
   </div>
   
