@@ -6,9 +6,9 @@
       <p>{{ subscription.title }}</p>
       <p>{{ subscription.price | currency }}</p>
       <ng-template  [ngIf]="needMoreDetails">
-        <p>Subscription Period: {{subscription.SubscriptionPeriod}} D</p>
-        <p>Available coin: {{subscription.AvailableCurrencies}}</p>
-        <p>Exchanges: {{subscription.AvailableExchanges}}</p>
+        <p>Subscription Period: {{subscription.details.SubscriptionPeriod}} D</p>
+        <p>Available coin: {{subscription.details.AvailableCurrencies}}</p>
+        <p>Exchanges: {{subscription.details.AvailableExchanges}}</p>
         
       </ng-template>
       

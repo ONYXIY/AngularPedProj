@@ -4,28 +4,31 @@
         "id": 1,
         "title": "Copper",
         "price": 100,
-        "SubscriptionPeriod": 30,
-        "AvailableCurrencies": "BTC",
-              "AvailableExchanges": ["blockchain.com", "bybit.com"]
-          
+        "details" : {
+          "SubscriptionPeriod": 30,
+          "AvailableCurrencies": "BTC",
+          "AvailableExchanges": ["blockchain.com", "bybit.com"]
+        }
       },
       {
         "id": 2,
         "title": "Silver",
         "price": 200,
-        "SubscriptionPeriod": 30,
-        "AvailableCurrencies": "BTC",
-        "AvailableExchanges": ["blockchain.com", "bybit.com"]
-
+        "details" : {
+          "SubscriptionPeriod": 30,
+          "AvailableCurrencies": "BTC",
+          "AvailableExchanges": ["blockchain.com", "bybit.com"]
+        }
       },
       {
         "id": 3,
         "title": "Gold",
         "price": 300,
-        "SubscriptionPeriod": 30,
-        "AvailableCurrencies": "BTC",
-        "AvailableExchanges": ["blockchain.com", "bybit.com"]
-
+        "details" : {
+          "SubscriptionPeriod": 30,
+          "AvailableCurrencies": "BTC",
+          "AvailableExchanges": ["blockchain.com", "bybit.com"]
+        }
       }
   ]
 }
