@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,8 @@ import { ProfileComponent } from './components/profile/profile/profile.component
 import { BaseModule } from './components/base/base.module';
 import { LoginComponent } from './components/login/login/login.component';
 import { SubscriptionComponent } from './components/subscription/subscription/subscription.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import { SubscriptionComponent } from './components/subscription/subscription/su
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule, FormsModule, BaseModule
+    AppRoutingModule, HttpClientModule, FormsModule, BaseModule, StoreModule.forRoot({}, {}), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   exports: [AppComponent],
   providers: [],

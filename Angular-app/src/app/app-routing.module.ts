@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'subscription', component: SubscriptionComponent},
+  {path: 'subscription/:id', component: SubscriptionComponent},
   {path: '**', redirectTo: '', component: AppComponent}
 ];
 
