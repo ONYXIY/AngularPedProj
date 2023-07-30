@@ -26,7 +26,7 @@ export class ChartsComponent {
     },
   ];
 
-  lineChartLabels: string[] = ['January', 'February', 'March', 'April', 'May', 'June'];
+  lineChartLabels: string[] = ['5 min', '10 min', '15 min', '20 min', '25 min', '30 min'];
 
   lineChartOptions: ChartOptions = {
     responsive: true,
