@@ -7,7 +7,7 @@ import { SubscriptionComponent } from './components/subscription/subscription/su
 
 const routes: Routes = [
   {path: '', loadChildren: () => import('./components/base/base.module').then(m =>m.BaseModule)},
-  {path: 'login', component: LoginComponent},
+  {path: 'registration', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'subscription', component: SubscriptionComponent},
   {path: 'subscription/:id', component: SubscriptionComponent},

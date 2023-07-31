@@ -4,8 +4,14 @@
 <div class="loginFrom">
     <form>
         
-        Login: <input>
-        Password: <input>
-        Confirm password: <input>
+        Login: <input id="login">
+        Password: <input id="password">
+        Confirm password: <input id="confirmPassword">
+        <div class="checkbox"> 
+       I have read and agree with <a class="terms">tearms</a><input type="checkbox" [(ngModel)]="isChecked" />
+        </div>
     </form>
+
+    <button class="btn">register</button>
+    <button class="btn">cancel</button>
 </div>
