@@ -1,53 +1,38 @@
+import { authService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { LoginData } from 'src/app/interface/interfaceAuth';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit{
-  isChecked: boolean = false;
-  signupUsers: any[] = [];
-  signupObj: any = {
+export class LoginComponent implements OnInit {
+  loginObj: LoginData = {
     userName: '',
-    email: '',
-    password: ''
+    password: '',
   };
 
-  loginObj: any = {
-    userName: '',
-    password: ''
+  constructor(private authService: authService) {}
+
+  ngOnInit(): void {}
+
+  onLogin() {
+    if (this.loginObj.userName && this.loginObj.password) {
+      const isLoginSuccessful = this.authService.onLogin(this.loginObj);
+
+      this.loginObj = {
+        userName: '',
+        password: '',
+      };
+
+      if (isLoginSuccessful) {
+        alert('Welcome');
+      } else {
+        alert('Wrong username or password');
+      }
+    } else {
+      alert('Please enter username and password');
+    }
   }
-
-
-  constructor(){}
-
-ngOnInit(): void {
-  const localData = localStorage.getItem('signUsers');
-  if(localData != null){
-    this.signupUsers = JSON.parse(localData);
-  }
 }
-acceptTerms(){
-  this.isChecked = !this.isChecked
-} 
-
-onSignUp() {
-this.signupUsers.push(this.signupObj);
-localStorage.setItem('signUpUsers',JSON.stringify(this.signupUsers));
-this.signupObj = {
-  userName: '',
-  email: '',
-  password: ''
-};
-}
-onLogin() {
-const isUserExist = this.signupUsers.find(m => m.userName == this.loginObj.userName && m.password == this.loginObj.password);
-if(isUserExist != undefined){
-  alert('User Login Successfully')
-}else{
-  alert('Wrong username of password')
-}
-}
-}
-

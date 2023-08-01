@@ -14,6 +14,9 @@ import { LoginComponent } from './components/login/login/login.component';
 import { SubscriptionComponent } from './components/subscription/subscription/subscription.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegistrationComponent } from './components/registration/registration/registration.component';
+
 
 
 @NgModule({
@@ -25,11 +28,19 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     
     ProfileComponent,
          LoginComponent,
-         SubscriptionComponent
+         SubscriptionComponent,
+         RegistrationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule, FormsModule, BaseModule, StoreModule.forRoot({}, {}), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    AppRoutingModule, 
+    HttpClientModule, 
+    FormsModule, 
+    BaseModule, 
+    StoreModule.forRoot({}, {}), 
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), 
+    BrowserAnimationsModule
+
   ],
   exports: [AppComponent],
   providers: [],
