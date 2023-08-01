@@ -31,9 +31,9 @@ function createStore(rootReducer: any){
 
 const store$ = createStore(reducer)
 store$.subscribe(state=>{
-login.innerHTML = JSON.stringify(state, null, 2)
-})
-
-document.getElementById('login').addEventListener('input', ()=>{
 
 })
+
+// document.getElementById('login').addEventListener('input', ()=>{
+
+// })
