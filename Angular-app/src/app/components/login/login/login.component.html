@@ -1,17 +1,27 @@
-<div class="HeaderLoginFrom">Registration</div>
-<!-- <button>Sing up</button>
-    <button>Sing in</button> -->
-<div class="loginFrom">
+<div class="HeaderRegFrom">Registration</div>
+<div class="signup">
     <form>
-        
-        Login: <input id="login">
-        Password: <input id="password">
-        Confirm password: <input id="confirmPassword">
+        Username: <input type="text" name="txt" [(ngModel)]="signupObj.userName">
+        email: <input type="email" name="email" [(ngModel)]="signupObj.email">
+        Password: <input type="password" name="pswd" [(ngModel)]="signupObj.password">
+        Confirm password: <input  type="password" name="pswd">
         <div class="checkbox"> 
-       I have read and agree with <a class="terms">tearms</a><input type="checkbox" [(ngModel)]="isChecked" />
+          I have read and agree with <a class="terms">terms</a>
+          <input type="checkbox" name="check" [(ngModel)]="isChecked" />
         </div>
+      </form>
+      
+    
+    <button (click)="onSignUp()" class="btn">register</button>
+    <button class="btn">cancel</button>
+</div>
+<div class="HeaderloginFrom">Login</div>
+<div class="login">
+    <form>
+        Username: <input type="text" name="userName" [(ngModel)]="loginObj.userName">
+        Password: <input type="password" name="pswrd" [(ngModel)]="loginObj.password">
     </form>
 
-    <button class="btn">register</button>
+    <button (click)="onLogin()" class="btn">login</button>
     <button class="btn">cancel</button>
 </div>
