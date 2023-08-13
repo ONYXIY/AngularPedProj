@@ -26,6 +26,17 @@ export const tasksFeature = createFeature({
     on(tasksAction.getColumnSuccess, (state, action) => ({
       ...state,
       ...action
-    }))
+    })),
+ on(tasksAction.postChangeColumnsSuccess, (state, action) => ({
+  ...state,
+  columns: action.columns,
+})),
+
+    on(tasksAction.moveTask, (state, action) =>({
+      ...state,
+      columns: action.columns
+
+    })),
+
   ),
 });
