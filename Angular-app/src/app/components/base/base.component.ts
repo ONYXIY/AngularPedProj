@@ -21,7 +21,6 @@ export class BaseComponent {
   lastBitcoinPriceBybit!: number;
   lastBitcoinPriceBlockchain!: number;
   howMuchMorePrice: number = 0;
-  // PriorityBTCFee!: number;
   private bybitApi$!: Observable<IBybitInterfacePrice[]>;
   private bchApi$!: Observable<ICurrApiInterface[]>;
   private BtcFee$!: Observable<IBTCFee>;
@@ -73,10 +72,4 @@ export class BaseComponent {
     }
       return this.howMuchMorePrice
     }
-    // AddBtcPrice(){
-    //   this.lastBitcoinPriceBlockchain = this.lastBitcoinPriceBlockchain + 1000 
-    //   console.log(this.lastBitcoinPriceBlockchain)
-    //   return this.lastBitcoinPriceBlockchain
-
-    // }
 }

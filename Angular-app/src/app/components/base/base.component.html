@@ -1,10 +1,5 @@
 <div class="name">
-    <div class="lastPrice" [ngClass]="{'bg-green': lastBitcoinPriceBybit > lastBitcoinPriceBlockchain, 'bg-red': lastBitcoinPriceBybit <= lastBitcoinPriceBlockchain}">
-      <!-- <select [(ngModel)]="selectSymbol" (change)="selectCoinBySymbol(selectSymbol)">
-        <option value="">All</option>
-        <option *ngFor="let item of currApiBlockchain" [value]="item.symbol">{{ item.symbol }}</option>
-      </select> -->
-    
+    <div class="lastPrice" [ngClass]="{'bg-green': lastBitcoinPriceBybit > lastBitcoinPriceBlockchain, 'bg-red': lastBitcoinPriceBybit <= lastBitcoinPriceBlockchain}"> 
     <div>
       <div><p>Bitcoin Price from blockchain: <br>{{ lastBitcoinPriceBlockchain }}</p></div>
     </div>
@@ -24,5 +19,4 @@
         <app-charts [lastBitcoinPriceBlockchain]="lastBitcoinPriceBlockchain"></app-charts>
     </div>
     <div>
-      <!-- <button>Add Price</button> -->
     </div>
